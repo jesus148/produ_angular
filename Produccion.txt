@@ -122,7 +122,7 @@ git branch -M main
 git push -u origin main
 
 
-> en git bush
+> en git hub
    settings > pages
   - Build and deployment
     Source : deploy from a branch
@@ -132,4 +132,31 @@ Your GitHub Pages site is currently  : main  > /doocs(eliges doocs)
 
 > en tu vscode proyecto de angular
   > folder dists > bases(mueve ese folder creado al construir con el build )
-     al root general de tu proyecto , y le cambias el nombre x docs
+     al root general de tu proyecto , y le cambias el nombre x docs q pusiste arriba
+  > git add .
+    git commit -m "test"
+    git push
+
+> en git hub
+   settings > pages
+  - Build and deployment
+    Source : deploy from a branch
+    > Branch
+Your GitHub Pages site is currently  : main  > /doocs(eliges doocs)
+   main: master u otra
+   > y pon en save
+
+> esto demorara un poco
+  saldra un icono de bolita en el actions esto quiere decir q cualquier cambio en tu repo el deploy tambien cambiara
+ en git hub > actions > en el diagrama tendra q esperar
+                        en la parte de deploy(url de la repo dar click)
+  > no saldra todavia tendremos que configurar
+
+
+>
+  en la carpeta de produccion
+  docs > index.html
+       > <base href="./"> ---- busca eso poner el . , o copialos no ma
+       > git add .
+       > git commit
+       > git push
