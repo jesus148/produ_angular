@@ -1,0 +1,54 @@
+<!-- recordar : que el html debe ser simple el codigo no poner mucha logica -->
+<!-- "list-group-item {{i === 0 ? 'list-group-item-success' : ''}} : li es pos 1 le da ese estilo pero el codigo no es recomendable -->
+
+<!-- recordar : cuando veas un elemento html en angular que tenga [] signfica que podra poner {} o codigo de js para la logica  -->
+ <!-- aplica clases de estilos de boostrap segun sea ultimo o primero  -->
+<!-- [ngClass]="{
+  'list-group-item-dark': isLast,
+  'list-group-item-primary': isFirst
+}" -->
+
+<h4>listado</h4>
+
+<ul class="list-group">
+  <!-- let i = index : se obtiene el indice  -->
+  <!-- et isFirst = first": verifica si es el primero de la list son variable q proporciona angular el ngfor-->
+  <!-- let isLast = last : igual verifica si el utlimo de la lista  -->
+  <!-- let isEven = even  : verifica si es par -->
+  <!-- let isOdd = odd : verifica si impar  -->
+  <li  *ngFor="let character of characterList ; let i = index ;
+      let isFirst = first ; let isLast = last ; let isEven = even ; let isOdd = odd"
+    class="list-group-item d-flex justify-content-between align-items-center "
+    [ngClass]="{
+      'list-group-item-dark': isLast,
+      'list-group-item-primary': isFirst
+    }">
+
+    <div>
+      <!-- muestra el indice -->
+      <span> {{ i + 1}}</span>
+      <!-- <span> {{ i  }}</span> -->
+      <span>  {{character.name}} </span>
+      <strong> Power : </strong>
+   <span>{{character.power}} </span>
+
+    </div>
+
+
+<button class="btn btn-danger" (click)="onDeleteCharacter(character.id )">X</button>
+
+
+<!-- <span>Es el primero {{i ===  0}}</span> -->
+<!-- <span>Es el primero {{isFirst}}</span> -->
+
+
+<!-- <span>Es el ultimo {{i ===  characterList.length - 1}}</span> -->
+<!-- <span>Es el ultimo {{isLast }}</span> -->
+
+<!-- verifica si es par , cambiar el i + 1 para ver los pares -->
+<!-- <span> Es par {{isEven }}</span> -->
+
+<!-- es impar  -->
+<!-- <span> Es impar {{ isOdd }}</span> -->
+</li>
+</ul>

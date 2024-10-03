@@ -1,0 +1,79 @@
+
+
+
+
+
+¿Qué veremos en esta sección?
+Una vez sentadas las bases de Angular en la sección anterior, vamos a seguir expandiéndolas aquí, con los siguientes temas:
+
+Profundizar un poco más en los módulos
+
+FormsModule
+
+ngModel
+
+@Inputs
+
+@outputs
+
+Servicios
+
+Métodos en servicios
+
+Depuraciones
+
+Hay más temas en los videos, pero en forma general esto es lo principal por ahora, tengan presente que aunque todo esto es opcional, la mayor parte de aplicaciones de Angular usan en cierto punto cada uno de los temas que están en esta sección, por lo que hay que asegurarnos de comprender bien cada lección.
+
+
+
+
+
+1.
+  Crea un módulo que en sí, es
+un agrupador de diferentes
+componentes.
+   PS C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases> ng g m dbz
+   CREATE src/app/dbz/dbz.module.ts (189 bytes)
+
+
+
+2. dentro folder dbz >
+     creamos las vistas y controller de forma manual debes ser = sus nombres
+
+
+
+3. package.json
+angular trata de mantener las versiones de angular y dependencias
+   "dependencies": {
+    "@angular/animations": "^15.0.0",
+    "@angular/common": "^15.0.0",
+    "@angular/compiler": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "@angular/forms": "^15.0.0",
+    "@angular/platform-browser": "^15.0.0",
+    "@angular/platform-browser-dynamic": "^15.0.0",
+    "@angular/router": "^15.0.0",
+    "bases": "file:",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.12.0"
+  },
+
+
+
+4. angular las llaves son eventos y los corchetes son atributos
+
+
+5. extensiones para ayudar en angular
+  Angular Schematics > es para crear componentes.etc de forma manual
+  Angular Snippets (Version 18) > para autocompletar codigo
+
+
+
+
+6.
+ instalando dependencia
+  PS C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases> npm i uuid
+
+
+PS C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases> npm i --save-dev @types/uuid

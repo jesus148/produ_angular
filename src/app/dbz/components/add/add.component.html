@@ -1,0 +1,23 @@
+
+<
+
+<!-- en angular el () es para eventos  -->
+ <!-- [] y esto es para asociar atributos  -->
+
+
+<h1>Agregar Personaje</h1>
+<form action="" class="row" (ngSubmit)="emitCharatcer()">
+    <input type="text"  [(ngModel)]="character.name" placeholder="Nombre" class="form-control mb-2"
+      name="name">
+    <input type="number" [(ngModel)]="character.power" name="power"  placeholder="Poder" class="form-control mb-2">
+
+    <button type="submit" class="btn btn-primary" >
+      Agregar
+    </button>
+    <!-- {{character | json}} : usando el pipe de json  -->
+    <!-- pipe es una función que toma un valor, lo procesa y devuelve un nuevo valor -->
+    <pre>{{character | json}}</pre>
+
+
+
+</form>

@@ -1,0 +1,40 @@
+
+<h1>modulo tercero</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+
+    <!-- importando componente  -->
+    <!-- dbz- : para identificar a q componente de un modulo x -->
+    <!-- Character de este componente se le envia en el [characterList] del componente list -->
+
+
+    <!-- (onDelete)="onDeleteCharacter($event)" : recibe del list el id para usar en este componente main-page que eliminara atraves de este id -->
+    <!-- DbzService :ponemos esto pq toda la data la pasamos al service entonces lo sacamos de ahi -->
+    <!-- <dbz-list [characterList]="DbzService.Character" (onDelete)="DbzService.onDeleteCharacter($event)"></dbz-list> -->
+
+    <!-- usando con el service -->
+     <!-- $event : $event es una variable especial que representa el evento que ha sido emitido o disparado en un componente o elemento HTML. Se utiliza para capturar y manejar eventos que ocurren en la aplicación. puede ser un numbero o string -->
+      <!-- <dbz-list [characterList]="DbzService.Character" (onDelete)="DbzService.onDeleteCharacter($event)"></dbz-list>
+        -->
+
+
+        <!-- usamos esto pq el service que usa este componente lo pusimos en private -->
+        <dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></dbz-list>
+
+
+  </div>
+  <div class="col">
+
+
+    <!-- importando componente  -->
+    <!-- (onNewCharacter)="onNewCharacter($event)" : obtenemos la data que nos envia el add.component -->
+     <!-- recorda q esta obtenida del add.component se agrega en el array este componente y se mostrar en el componente de arriba -->
+    <!-- <dbz-add-form (onNewCharacter)="DbzService.onNewCharacter($event)" ></dbz-add-form> -->
+
+    <!-- metodo usando los metodos publicos pq el service de este metodo es privado -->
+    <dbz-add-form (onNewCharacter)="onNewCharacter($event)" ></dbz-add-form>
+  </div>
+
+</div>

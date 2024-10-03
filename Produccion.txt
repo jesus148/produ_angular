@@ -1,0 +1,113 @@
+
+
+forma de como desplegar un proyecto al servidor osea a produccion
+
+
+1.
+
+
+ > node_modules : igual peso mucho
+
+
+
+
+
+PS C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases> ng serve -o
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files   | Names         |  Raw Size
+vendor.js             | vendor        |   2.06 MB |
+polyfills.js          | polyfills     | 314.26 kB |
+styles.css, styles.js | styles        | 209.39 kB |
+main.js               | main          |  44.51 kB |  -- tu main
+runtime.js            | runtime       |   6.51 kB |   --- corre el server
+
+                      | Initial Total |   2.63 MB   --- el peso es demasiado lo que se subira al servidor
+
+
+2.
+
+ng build : genera el folder buil que se subira a produccion
+
+  PS C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases> ng build
+✔ Browser application bundle generation complete.
+✔ Copying assets complete.
+✔ Index html generation complete.
+
+Initial Chunk Files           | Names         |  Raw Size | Estimated Transfer Size
+main.df832b3aac385f36.js      | main          | 147.29 kB |                40.67 kB
+polyfills.a4bbe5954e366519.js | polyfills     |  33.07 kB |                10.69 kB
+runtime.00a305ca71064f94.js   | runtime       | 888 bytes |               507 bytes
+styles.ef46db3751d8e999.css   | styles        |   0 bytes |                       -
+
+                              | Initial Total | 181.23 kB |                51.86 kB   --esto se subira el tamaño total
+
+
+main.df832b3aac385f36.js   : se guarda en cache pa inicializar mas rapido el proyecto al ejecutar
+
+
+
+3.
+
+ > en el package.json
+
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve -o",
+    "build": "ng build",   ----- para contruir a produccion
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+
+> puedes usar el  > npm run build
+   o ng build (angular cli)
+
+
+>
+PS C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases> ng build
+✔ Browser application bundle generation complete.
+✔ Copying assets complete.
+✔ Index html generation complete.
+
+Initial Chunk Files           | Names         |  Raw Size | Estimated Transfer Size
+main.df832b3aac385f36.js      | main          | 147.29 kB |                40.67 kB ---cambia el hash x cada cambion en tu
+                                                                                      tu proyecto osea el codigo
+polyfills.a4bbe5954e366519.js | polyfills     |  33.07 kB |                10.69 kB
+runtime.00a305ca71064f94.js   | runtime       | 888 bytes |               507 bytes
+styles.ef46db3751d8e999.css   | styles        |   0 bytes |                       -
+
+                              | Initial Total | 181.23 kB |                51.86 kB   ----ahora pesa menos
+
+
+ > esto genera un folder dist
+     donde estara todo el codigo que se subira a produccion
+
+
+
+4.
+  instalamos un server de manera global pa crear un server local pero de manera de produccion
+
+> esto es  solo para ejemplos no usar profesionalmente
+C:\Windows\system32>npm install --global http-server
+
+
+
+> en el folder dist > bases > lo ejecutamos el server con el dist de produccion osea esto ya es parte de produccion
+C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases\dist\bases>http-server -o
+Starting up http-server, serving ./
+
+http-server version: 14.1.1
+
+
+
+
+
+
+
+
+
+SUBIRLO A GITPAGES=================================================================
+
+solo se sube contenido estatico. nada bd nada de eso
+
+> crea el repositorio con git
