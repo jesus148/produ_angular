@@ -111,3 +111,25 @@ SUBIRLO A GITPAGES==============================================================
 solo se sube contenido estatico. nada bd nada de eso
 
 > crea el repositorio con git
+   git init  , git add , git commit -m
+
+> git bash
+  relaciona tu repo con tu proyecto
+  …or push an existing repository from the command line
+  en este caso se usa la rama main
+git remote add origin https://github.com/jesus148/produ_angular.git
+git branch -M main
+git push -u origin main
+
+
+> en git bush
+   settings > pages
+  - Build and deployment
+    Source : deploy from a branch
+    > Branch
+Your GitHub Pages site is currently  : main  > /doocs(eliges doocs)
+   main: master u otra
+
+> en tu vscode proyecto de angular
+  > folder dists > bases(mueve ese folder creado al construir con el build )
+     al root general de tu proyecto , y le cambias el nombre x docs
