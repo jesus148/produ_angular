@@ -160,3 +160,59 @@ Your GitHub Pages site is currently  : main  > /doocs(eliges doocs)
        > git add .
        > git commit
        > git push
+
+
+>
+git hub > actions > en el diagrama tendra q esperar , cada bolita es un diferente deploy
+                        en la parte de deploy(url de la repo dar click)
+
+   > con esto ya tendra que salir el deply en la web
+
+   > el problemas de esto es que cada vez q hagas un push u otro cambio
+
+
+
+> en el package.json
+   "scripts": {
+    "ng": "ng",
+    "start": "ng serve -o",
+    "build": "ng build",
+    "build:href": "ng build --base-href ./", ---- agregar esto , pa cambiar el baseurl de la app q estamos contruyendo
+    comandos juntos con el && , se juntan varios comandos
+    "build:github":"npm run delete:docs && npm run build:href && npm run copy:dist",  ----elimina todo , genera el dist y el
+                                                                                          docs
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "new:folder":"mkdir temporal2" ,    ----agregar esto pa crear folders
+    "delete:docs" :"del docs"    --- eliminar el folder docs,
+    "copy:dist":"copyfiles dist/bases/* ./docs -f"  --- copia el dist folder y lo agreg en el folder docs
+  },
+con esto podemos poner nuestros propios comandos
+
+ ejecuta esto sirve para crear folders auto ,
+ PS C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases> npm run new:folder
+
+
+ ejecuta esto sirve para crear un folder > dist
+  en este caso crea el folder dist
+ osea todo el folder docs lo copia ahi en dist algo asi
+PS C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases> npm run build:href
+
+
+ejecuta y elimina el folder docs osea toda su data
+instala primero
+PS C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases> npm install del-cli --save-dev
+comando en la terminal : npm run delete:docs
+
+
+PS C:\Users\jesus\Desktop\JESUS\ANGULAR\curso_intro\bases_Angular_2\angular-bases> npm i copyfiles --save-dev
+documentacion : https://www.npmjs.com/package/copyfiles
+> poner en la terinal : npm run copy:dist
+
+
+
+comando el pachake.json ":
+comando resumido para iniciar la app,
+borra todo luego crear otrbas cosas , luego
+build:github":"npm run delete:docs && npm run build:href && npm run copy:dist",
+ ejecuta en el cmd :  npm run build:github
